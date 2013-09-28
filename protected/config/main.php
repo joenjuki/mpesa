@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'MPESA Business Number Management System',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -37,7 +37,7 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 		// uncomment the following to enable URLs in path-format
-		/*
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -45,10 +45,11 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
+			'showScriptName' => false
 		),
-		*/
+		
 		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
+			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db'
 		),
 		// uncomment the following to use a MySQL database
 		/*
@@ -62,15 +63,19 @@ return array(
 		*/
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
-			'errorAction'=>'site/error',
+			'errorAction'=>'site/error'
 		),
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
 				array(
-					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
-				),
+                   'class'=>'CFileLogRoute',
+                   'levels'=>'trace, info, error, warning',
+                   //'categories'=>'system.*',
+                   'logFile' => 'MBNMS.log',
+                   'except' => "system.CModule.*, system.caching.*, system.web.*" 
+
+               ),
 				// uncomment the following to show log messages on web pages
 				/*
 				array(

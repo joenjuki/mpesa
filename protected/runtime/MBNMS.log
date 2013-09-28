@@ -1,0 +1,112 @@
+2013/09/28 12:31:11 [trace] [system.CModule] Loading "log" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:31:11 [trace] [system.CModule] Loading "request" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:31:11 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:31:11 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/mpesa/protected/views/layouts/column1.php (2)
+in /var/www/mpesa/protected/controllers/SiteController.php (32)
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:31:11 [trace] [system.CModule] Loading "user" application component
+in /var/www/mpesa/protected/views/layouts/main.php (35)
+in /var/www/mpesa/protected/views/layouts/column1.php (6)
+in /var/www/mpesa/protected/controllers/SiteController.php (32)
+2013/09/28 12:31:11 [trace] [system.CModule] Loading "session" application component
+in /var/www/mpesa/protected/views/layouts/main.php (35)
+in /var/www/mpesa/protected/views/layouts/column1.php (6)
+in /var/www/mpesa/protected/controllers/SiteController.php (32)
+2013/09/28 12:31:11 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/mpesa/protected/views/layouts/main.php (53)
+in /var/www/mpesa/protected/views/layouts/column1.php (6)
+in /var/www/mpesa/protected/controllers/SiteController.php (32)
+2013/09/28 12:31:11 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/mpesa/protected/controllers/SiteController.php (32)
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:31:14 [trace] [system.CModule] Loading "log" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:31:14 [trace] [system.CModule] Loading "request" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:31:14 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:31:14 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/mpesa/protected/views/layouts/column1.php (2)
+in /var/www/mpesa/protected/controllers/SiteController.php (32)
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:31:14 [trace] [system.CModule] Loading "user" application component
+in /var/www/mpesa/protected/views/layouts/main.php (35)
+in /var/www/mpesa/protected/views/layouts/column1.php (6)
+in /var/www/mpesa/protected/controllers/SiteController.php (32)
+2013/09/28 12:31:14 [trace] [system.CModule] Loading "session" application component
+in /var/www/mpesa/protected/views/layouts/main.php (35)
+in /var/www/mpesa/protected/views/layouts/column1.php (6)
+in /var/www/mpesa/protected/controllers/SiteController.php (32)
+2013/09/28 12:31:14 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/mpesa/protected/views/layouts/main.php (53)
+in /var/www/mpesa/protected/views/layouts/column1.php (6)
+in /var/www/mpesa/protected/controllers/SiteController.php (32)
+2013/09/28 12:31:14 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/mpesa/protected/controllers/SiteController.php (32)
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:32:23 [trace] [system.CModule] Loading "log" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:32:23 [trace] [system.CModule] Loading "request" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:32:23 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:32:23 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:32:23 [trace] [system.CModule] Loading "errorHandler" application component
+2013/09/28 12:32:23 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/mpesa/protected/views/layouts/column1.php (2)
+in /var/www/mpesa/protected/controllers/SiteController.php (45)
+2013/09/28 12:32:23 [trace] [system.CModule] Loading "user" application component
+in /var/www/mpesa/protected/views/layouts/main.php (35)
+in /var/www/mpesa/protected/views/layouts/column1.php (6)
+in /var/www/mpesa/protected/controllers/SiteController.php (45)
+2013/09/28 12:32:23 [trace] [system.CModule] Loading "session" application component
+in /var/www/mpesa/protected/views/layouts/main.php (35)
+in /var/www/mpesa/protected/views/layouts/column1.php (6)
+in /var/www/mpesa/protected/controllers/SiteController.php (45)
+2013/09/28 12:32:23 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/mpesa/protected/controllers/SiteController.php (45)
+2013/09/28 12:32:32 [trace] [system.CModule] Loading "log" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:32:32 [trace] [system.CModule] Loading "request" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:32:32 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:32:32 [trace] [system.CModule] Loading "user" application component
+in /var/www/mpesa/protected/controllers/MpesaController.php (7)
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:32:32 [trace] [system.CModule] Loading "session" application component
+in /var/www/mpesa/protected/controllers/MpesaController.php (7)
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:32:32 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/mpesa/protected/controllers/MpesaController.php (7)
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:32:32 [trace] [system.CModule] Loading "errorHandler" application component
+2013/09/28 12:34:38 [trace] [system.CModule] Loading "log" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:34:38 [trace] [system.CModule] Loading "request" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:34:38 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:34:38 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/mpesa/protected/controllers/MpesaController.php (9)
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:34:38 [trace] [system.CModule] Loading "errorHandler" application component
+2013/09/28 12:40:39 [info] [mpesa-controller] http://localhost/mpesa/index.php/mpesa/index.php/mpesa/testMpesa
+in /var/www/mpesa/protected/controllers/MpesaController.php (8)
+in /var/www/mpesa/index.php (13)
+2013/09/28 12:46:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "testMpesa".' in /var/www/mpesa/protected/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/mpesa/protected/framework/web/CWebApplication.php(141): CWebApplication->runController('testMpesa')
+#1 /var/www/mpesa/protected/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/mpesa/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/mpesa/index.php/testMpesa
+---
+2013/09/28 12:46:49 [info] [mpesa-controller] http://localhost/mpesa/mpesa/index.php/mpesa/testMpesa
+in /var/www/mpesa/protected/controllers/MpesaController.php (8)
+in /var/www/mpesa/index.php (13)
