@@ -8,7 +8,11 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'MPESA Business Number Management System',
-
+		'defaultController' => 'mpesa/testMpesa',
+	'preload' => array(
+			'log',
+			'session'
+		),
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -45,22 +49,22 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
-			'showScriptName' => false
+			// 'showScriptName' => false
 		),
 		
-		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db'
-		),
+		// 'db'=>array(
+		// 	'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db'
+		// ),
 		// uncomment the following to use a MySQL database
-		/*
+		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
+			'connectionString' => 'mysql:host=localhost;dbname=wwwkemb_mpesa',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'root',
 			'charset' => 'utf8',
 		),
-		*/
+		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error'
