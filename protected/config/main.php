@@ -8,7 +8,8 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'MPESA Business Number Management System',
-		'defaultController' => 'mpesa/testMpesa',
+	'defaultController' => 'site/login',
+	'theme' => 'abound',
 	'preload' => array(
 			'log',
 			'session'
