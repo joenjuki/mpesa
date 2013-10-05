@@ -12,6 +12,7 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 	
     <div class="span6 offset3">
 <?php
+    $this->widget('application.modules.user.components.LoginWidget');
 	$this->beginWidget('zii.widgets.CPortlet', array(
 		'title'=>"Private access",
 	));

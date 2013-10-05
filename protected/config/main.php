@@ -21,6 +21,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.modules.user.models.*'
 	),
 
 	'modules'=>array(
@@ -33,14 +34,52 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
 		*/
+		'user' => array(
+		'debug' => false,
+		'userTable' => 'user',
+		'translationTable' => 'translation',
+		),
+		'usergroup' => array(
+		'usergroupTable' => 'usergroup',
+		'usergroupMessageTable' => 'user_group_message',
+		),
+		'membership' => array(
+		'membershipTable' => 'membership',
+		'paymentTable' => 'payment',
+		),
+		'friendship' => array(
+		'friendshipTable' => 'friendship',
+		),
+		'profile' => array(
+		'privacySettingTable' => 'privacysetting',
+		'profileFieldTable' => 'profile_field',
+		'profileTable' => 'profile',
+		'profileCommentTable' => 'profile_comment',
+		'profileVisitTable' => 'profile_visit',
+		),
+		'role' => array(
+		'roleTable' => 'role',
+		'userRoleTable' => 'user_role',
+		'actionTable' => 'action',
+		'permissionTable' => 'permission',
+		),
+		'message' => array(
+		'messageTable' => 'message',
+		)
 	),
 
 	// application components
 	'components'=>array(
+		// 'user'=>array(
+		// 	// enable cookie-based authentication
+		// 	'allowAutoLogin'=>true,
+		// ),
 		'user'=>array(
-			// enable cookie-based authentication
+			'class' => 'application.modules.user.components.YumWebUser',
 			'allowAutoLogin'=>true,
-		),
+			'loginUrl' => array('//site/login'),
+			),
+
 		// uncomment the following to enable URLs in path-format
 		
 		'urlManager'=>array(
@@ -52,7 +91,15 @@ return array(
 			),
 			// 'showScriptName' => false
 		),
-		
+		'session' => array(
+			'sessionName' => 'mbnmsSession',
+			'class' => 'CHttpSession',
+			//'class' => 'CDbHttpSession',
+			'autoStart' => true,
+			//8 hrs timeout
+			'timeout' => 28800,
+			//'timeout' => 300,
+		),
 		// 'db'=>array(
 		// 	'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db'
 		// ),
@@ -70,17 +117,20 @@ return array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error'
 		),
+		'cache'=>array(
+			'class'=>'system.caching.CMemCache',
+			),
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
 				array(
-                   'class'=>'CFileLogRoute',
-                   'levels'=>'trace, info, error, warning',
-                   //'categories'=>'system.*',
-                   'logFile' => 'MBNMS.log',
-                   'except' => "system.CModule.*, system.caching.*, system.web.*" 
+				   'class'=>'CFileLogRoute',
+				   'levels'=>'trace, info, error, warning',
+				   //'categories'=>'system.*',
+				   'logFile' => 'MBNMS.log',
+				   'except' => "system.CModule.*, system.caching.*, system.web.*" 
 
-               ),
+			   ),
 				// uncomment the following to show log messages on web pages
 				/*
 				array(
