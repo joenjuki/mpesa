@@ -1,112 +1,485 @@
-2013/09/28 12:31:11 [trace] [system.CModule] Loading "log" application component
+2014/02/23 13:45:17 [trace] [system.base.CModule] Loading "user" module
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:31:11 [trace] [system.CModule] Loading "request" application component
+2014/02/23 13:45:27 [trace] [system.base.CModule] Loading "rights" module
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:31:11 [trace] [system.CModule] Loading "urlManager" application component
+2014/02/23 13:45:27 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (27)
+in /var/www/mpesa/protected/modules/rights/RightsModule.php (193)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (21)
+2014/02/23 13:45:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM AuthAssignment WHERE itemname=:itemname
+in /var/www/mpesa/protected/modules/rights/components/RDbAuthManager.php (247)
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (285)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+2014/02/23 13:45:27 [trace] [system.base.CModule] Loading "user" module
+in /var/www/mpesa/protected/modules/user/models/User.php (41)
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+2014/02/23 13:45:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `users`
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:31:11 [trace] [system.CModule] Loading "widgetFactory" application component
-in /var/www/mpesa/protected/views/layouts/column1.php (2)
-in /var/www/mpesa/protected/controllers/SiteController.php (32)
+2014/02/23 13:45:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:31:11 [trace] [system.CModule] Loading "user" application component
-in /var/www/mpesa/protected/views/layouts/main.php (35)
-in /var/www/mpesa/protected/views/layouts/column1.php (6)
-in /var/www/mpesa/protected/controllers/SiteController.php (32)
-2013/09/28 12:31:11 [trace] [system.CModule] Loading "session" application component
-in /var/www/mpesa/protected/views/layouts/main.php (35)
-in /var/www/mpesa/protected/views/layouts/column1.php (6)
-in /var/www/mpesa/protected/controllers/SiteController.php (32)
-2013/09/28 12:31:11 [trace] [system.CModule] Loading "coreMessages" application component
-in /var/www/mpesa/protected/views/layouts/main.php (53)
-in /var/www/mpesa/protected/views/layouts/column1.php (6)
-in /var/www/mpesa/protected/controllers/SiteController.php (32)
-2013/09/28 12:31:11 [trace] [system.CModule] Loading "clientScript" application component
-in /var/www/mpesa/protected/controllers/SiteController.php (32)
+2014/02/23 13:45:27 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:31:14 [trace] [system.CModule] Loading "log" application component
+2014/02/23 13:45:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `profiles`
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:31:14 [trace] [system.CModule] Loading "request" application component
+2014/02/23 13:45:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `profiles`
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:31:14 [trace] [system.CModule] Loading "urlManager" application component
+2014/02/23 13:45:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (id=:ycp0)
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:31:14 [trace] [system.CModule] Loading "widgetFactory" application component
-in /var/www/mpesa/protected/views/layouts/column1.php (2)
-in /var/www/mpesa/protected/controllers/SiteController.php (32)
+2014/02/23 13:45:27 [trace] [system.base.CModule] Loading "user" module
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:31:14 [trace] [system.CModule] Loading "user" application component
-in /var/www/mpesa/protected/views/layouts/main.php (35)
-in /var/www/mpesa/protected/views/layouts/column1.php (6)
-in /var/www/mpesa/protected/controllers/SiteController.php (32)
-2013/09/28 12:31:14 [trace] [system.CModule] Loading "session" application component
-in /var/www/mpesa/protected/views/layouts/main.php (35)
-in /var/www/mpesa/protected/views/layouts/column1.php (6)
-in /var/www/mpesa/protected/controllers/SiteController.php (32)
-2013/09/28 12:31:14 [trace] [system.CModule] Loading "coreMessages" application component
-in /var/www/mpesa/protected/views/layouts/main.php (53)
-in /var/www/mpesa/protected/views/layouts/column1.php (6)
-in /var/www/mpesa/protected/controllers/SiteController.php (32)
-2013/09/28 12:31:14 [trace] [system.CModule] Loading "clientScript" application component
-in /var/www/mpesa/protected/controllers/SiteController.php (32)
+2014/02/23 13:45:35 [trace] [system.base.CModule] Loading "user" module
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:32:23 [trace] [system.CModule] Loading "log" application component
+2014/02/23 13:45:35 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/mpesa/protected/modules/user/models/User.php (33)
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+2014/02/23 13:45:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `users`
+in /var/www/mpesa/protected/modules/user/models/User.php (33)
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+2014/02/23 13:45:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in /var/www/mpesa/protected/modules/user/models/User.php (33)
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+2014/02/23 13:45:35 [trace] [system.db.ar.CActiveRecord] User.findByAttributes()
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (22)
+2014/02/23 13:45:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `profiles`
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (22)
+2014/02/23 13:45:35 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `profiles`
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (22)
+2014/02/23 13:45:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`activkey` AS `t0_c4`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`username`=:yp0)
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (22)
+2014/02/23 13:45:35 [trace] [system.base.CModule] Loading "rights" module
+in /var/www/mpesa/protected/modules/rights/components/Rights.php (271)
+in /var/www/mpesa/protected/modules/rights/components/Rights.php (254)
+in /var/www/mpesa/protected/modules/rights/components/Rights.php (287)
+2014/02/23 13:45:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (341)
+in /var/www/mpesa/protected/modules/rights/components/RWebUser.php (21)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (57)
+2014/02/23 13:45:35 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (38)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:32:23 [trace] [system.CModule] Loading "request" application component
+2014/02/23 13:45:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`activkey` AS `t0_c4`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (38)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:32:23 [trace] [system.CModule] Loading "urlManager" application component
+2014/02/23 13:45:35 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/UserModule.php (194)
+in /var/www/mpesa/protected/modules/user/models/User.php (51)
+2014/02/23 13:45:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1)
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/UserModule.php (194)
+in /var/www/mpesa/protected/modules/user/models/User.php (51)
+2014/02/23 13:45:35 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:32:23 [trace] [system.CModule] Loading "coreMessages" application component
+2014/02/23 13:45:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`username`=:ycp0) LIMIT 2
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:32:23 [trace] [system.CModule] Loading "errorHandler" application component
-2013/09/28 12:32:23 [trace] [system.CModule] Loading "widgetFactory" application component
-in /var/www/mpesa/protected/views/layouts/column1.php (2)
-in /var/www/mpesa/protected/controllers/SiteController.php (45)
-2013/09/28 12:32:23 [trace] [system.CModule] Loading "user" application component
-in /var/www/mpesa/protected/views/layouts/main.php (35)
-in /var/www/mpesa/protected/views/layouts/column1.php (6)
-in /var/www/mpesa/protected/controllers/SiteController.php (45)
-2013/09/28 12:32:23 [trace] [system.CModule] Loading "session" application component
-in /var/www/mpesa/protected/views/layouts/main.php (35)
-in /var/www/mpesa/protected/views/layouts/column1.php (6)
-in /var/www/mpesa/protected/controllers/SiteController.php (45)
-2013/09/28 12:32:23 [trace] [system.CModule] Loading "clientScript" application component
-in /var/www/mpesa/protected/controllers/SiteController.php (45)
-2013/09/28 12:32:32 [trace] [system.CModule] Loading "log" application component
+2014/02/23 13:45:35 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:32:32 [trace] [system.CModule] Loading "request" application component
+2014/02/23 13:45:35 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`email`=:ycp1) LIMIT 2
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:32:32 [trace] [system.CModule] Loading "urlManager" application component
+2014/02/23 13:45:35 [trace] [system.db.ar.CActiveRecord] User.update()
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:32:32 [trace] [system.CModule] Loading "user" application component
-in /var/www/mpesa/protected/controllers/MpesaController.php (7)
+2014/02/23 13:45:35 [trace] [system.db.ar.CActiveRecord] User.updateByPk()
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:32:32 [trace] [system.CModule] Loading "session" application component
-in /var/www/mpesa/protected/controllers/MpesaController.php (7)
+2014/02/23 13:45:35 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `users` SET `id`=:yp0, `username`=:yp1, `email`=:yp2, `create_at`=:yp3, `lastvisit_at`=:yp4, `superuser`=:yp5, `status`=:yp6, `password`=:yp7, `activkey`=:yp8 WHERE `users`.`id`=1
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:32:32 [trace] [system.CModule] Loading "coreMessages" application component
-in /var/www/mpesa/protected/controllers/MpesaController.php (7)
+2014/02/23 13:45:35 [trace] [system.base.CModule] Loading "user" module
+in /var/www/mpesa/themes/abound/views/layouts/tpl_navigation.php (25)
+in /var/www/mpesa/themes/abound/views/layouts/main.php (54)
+in /var/www/mpesa/themes/abound/views/layouts/column2.php (90)
+2014/02/23 13:45:50 [trace] [system.base.CModule] Loading "user" module
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:32:32 [trace] [system.CModule] Loading "errorHandler" application component
-2013/09/28 12:34:38 [trace] [system.CModule] Loading "log" application component
+2014/02/23 13:46:17 [trace] [system.base.CModule] Loading "user" module
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:34:38 [trace] [system.CModule] Loading "request" application component
+2014/02/23 13:48:41 [trace] [system.base.CModule] Loading "user" module
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:34:38 [trace] [system.CModule] Loading "urlManager" application component
+2014/02/23 13:50:54 [trace] [system.base.CModule] Loading "user" module
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:34:38 [trace] [system.CModule] Loading "coreMessages" application component
-in /var/www/mpesa/protected/controllers/MpesaController.php (9)
+2014/02/23 13:52:17 [trace] [system.base.CModule] Loading "user" module
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:34:38 [trace] [system.CModule] Loading "errorHandler" application component
-2013/09/28 12:40:39 [info] [mpesa-controller] http://localhost/mpesa/index.php/mpesa/index.php/mpesa/testMpesa
-in /var/www/mpesa/protected/controllers/MpesaController.php (8)
+2014/02/23 13:52:33 [trace] [system.base.CModule] Loading "user" module
 in /var/www/mpesa/index.php (13)
-2013/09/28 12:46:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "testMpesa".' in /var/www/mpesa/protected/framework/web/CWebApplication.php:286
-Stack trace:
-#0 /var/www/mpesa/protected/framework/web/CWebApplication.php(141): CWebApplication->runController('testMpesa')
-#1 /var/www/mpesa/protected/framework/base/CApplication.php(169): CWebApplication->processRequest()
-#2 /var/www/mpesa/index.php(13): CApplication->run()
-#3 {main}
-REQUEST_URI=/mpesa/index.php/testMpesa
----
-2013/09/28 12:46:49 [info] [mpesa-controller] http://localhost/mpesa/mpesa/index.php/mpesa/testMpesa
-in /var/www/mpesa/protected/controllers/MpesaController.php (8)
+2014/02/23 13:52:33 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/mpesa/protected/modules/user/models/User.php (33)
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+2014/02/23 13:52:33 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `users`
+in /var/www/mpesa/protected/modules/user/models/User.php (33)
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+2014/02/23 13:52:33 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in /var/www/mpesa/protected/modules/user/models/User.php (33)
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+2014/02/23 13:52:33 [trace] [system.db.ar.CActiveRecord] User.findByAttributes()
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (22)
+2014/02/23 13:52:33 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `profiles`
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (22)
+2014/02/23 13:52:33 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `profiles`
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (22)
+2014/02/23 13:52:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`activkey` AS `t0_c4`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`username`=:yp0)
+in /var/www/mpesa/protected/modules/user/components/UserIdentity.php (27)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (52)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (22)
+2014/02/23 13:52:33 [trace] [system.base.CModule] Loading "rights" module
+in /var/www/mpesa/protected/modules/rights/components/Rights.php (271)
+in /var/www/mpesa/protected/modules/rights/components/Rights.php (254)
+in /var/www/mpesa/protected/modules/rights/components/Rights.php (287)
+2014/02/23 13:52:34 [trace] [system.db.CDbCommand] Querying SQL: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (341)
+in /var/www/mpesa/protected/modules/rights/components/RWebUser.php (21)
+in /var/www/mpesa/protected/modules/user/models/UserLogin.php (57)
+2014/02/23 13:52:34 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (38)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:34 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`activkey` AS `t0_c4`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (38)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:34 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/UserModule.php (194)
+in /var/www/mpesa/protected/modules/user/models/User.php (51)
+2014/02/23 13:52:34 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1)
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/UserModule.php (194)
+in /var/www/mpesa/protected/modules/user/models/User.php (51)
+2014/02/23 13:52:34 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:34 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`username`=:ycp0) LIMIT 2
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:34 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:34 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`email`=:ycp1) LIMIT 2
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:34 [trace] [system.db.ar.CActiveRecord] User.update()
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:34 [trace] [system.db.ar.CActiveRecord] User.updateByPk()
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:34 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `users` SET `id`=:yp0, `username`=:yp1, `email`=:yp2, `create_at`=:yp3, `lastvisit_at`=:yp4, `superuser`=:yp5, `status`=:yp6, `password`=:yp7, `activkey`=:yp8 WHERE `users`.`id`=1
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (40)
+in /var/www/mpesa/protected/modules/user/controllers/LoginController.php (23)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:34 [trace] [system.base.CModule] Loading "user" module
+in /var/www/mpesa/themes/abound/views/layouts/tpl_navigation.php (25)
+in /var/www/mpesa/themes/abound/views/layouts/main.php (54)
+in /var/www/mpesa/themes/abound/views/layouts/column2.php (90)
+2014/02/23 13:52:39 [trace] [system.base.CModule] Loading "rights" module
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:39 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (27)
+in /var/www/mpesa/protected/modules/rights/RightsModule.php (193)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (21)
+2014/02/23 13:52:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM AuthAssignment WHERE itemname=:itemname
+in /var/www/mpesa/protected/modules/rights/components/RDbAuthManager.php (247)
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (285)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+2014/02/23 13:52:39 [trace] [system.base.CModule] Loading "user" module
+in /var/www/mpesa/protected/modules/user/models/User.php (41)
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+2014/02/23 13:52:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `users`
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:39 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `profiles`
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `profiles`
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (id=:ycp0)
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:39 [trace] [system.db.ar.CActiveRecord] User.count()
+in /var/www/mpesa/protected/modules/rights/components/dataproviders/RAssignmentDataProvider.php (30)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (74)
+2014/02/23 13:52:39 [trace] [system.db.ar.CActiveRecord] User.count() eagerly
+in /var/www/mpesa/protected/modules/rights/components/dataproviders/RAssignmentDataProvider.php (30)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (74)
+2014/02/23 13:52:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(DISTINCT `user`.`id`) FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`) 
+in /var/www/mpesa/protected/modules/rights/components/dataproviders/RAssignmentDataProvider.php (30)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (74)
+2014/02/23 13:52:39 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in /var/www/mpesa/protected/modules/rights/components/dataproviders/RAssignmentDataProvider.php (30)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (74)
+2014/02/23 13:52:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  LIMIT 50
+in /var/www/mpesa/protected/modules/rights/components/dataproviders/RAssignmentDataProvider.php (30)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (74)
+2014/02/23 13:52:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid
+in /var/www/mpesa/protected/modules/rights/components/behaviors/RUserBehavior.php (91)
+in /var/www/mpesa/protected/modules/rights/components/behaviors/RUserBehavior.php (65)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+2014/02/23 13:52:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT name,t1.type,description,t1.bizrule,t1.data,weight
+					FROM AuthItem t1
+					LEFT JOIN Rights t2 ON name=itemname
+					ORDER BY t1.type DESC, weight ASC
+in /var/www/mpesa/protected/modules/rights/components/RDbAuthManager.php (169)
+in /var/www/mpesa/protected/modules/rights/components/RDbAuthManager.php (93)
+in /var/www/mpesa/protected/modules/rights/components/behaviors/RUserBehavior.php (92)
+2014/02/23 13:52:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid
+in /var/www/mpesa/protected/modules/rights/components/behaviors/RUserBehavior.php (91)
+in /var/www/mpesa/protected/modules/rights/components/behaviors/RUserBehavior.php (65)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+2014/02/23 13:52:43 [trace] [system.base.CModule] Loading "user" module
+in /var/www/mpesa/themes/abound/views/layouts/tpl_navigation.php (25)
+in /var/www/mpesa/themes/abound/views/layouts/main.php (54)
+in /var/www/mpesa/themes/abound/views/layouts/column2.php (90)
+2014/02/23 13:52:45 [trace] [system.base.CModule] Loading "user" module
+in /var/www/mpesa/themes/abound/views/layouts/tpl_navigation.php (25)
+in /var/www/mpesa/themes/abound/views/layouts/main.php (54)
+in /var/www/mpesa/themes/abound/views/layouts/column2.php (90)
+2014/02/23 13:52:47 [trace] [system.base.CModule] Loading "rights" module
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:47 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (27)
+in /var/www/mpesa/protected/modules/rights/RightsModule.php (193)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (21)
+2014/02/23 13:52:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM AuthAssignment WHERE itemname=:itemname
+in /var/www/mpesa/protected/modules/rights/components/RDbAuthManager.php (247)
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (285)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+2014/02/23 13:52:47 [trace] [system.base.CModule] Loading "user" module
+in /var/www/mpesa/protected/modules/user/models/User.php (41)
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+2014/02/23 13:52:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `users`
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:47 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `profiles`
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `profiles`
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (id=:ycp0)
+in /var/www/mpesa/protected/modules/rights/components/RAuthorizer.php (295)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (51)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:47 [trace] [system.db.ar.CActiveRecord] User.count()
+in /var/www/mpesa/protected/modules/rights/components/dataproviders/RAssignmentDataProvider.php (30)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (74)
+2014/02/23 13:52:47 [trace] [system.db.ar.CActiveRecord] User.count() eagerly
+in /var/www/mpesa/protected/modules/rights/components/dataproviders/RAssignmentDataProvider.php (30)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (74)
+2014/02/23 13:52:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(DISTINCT `user`.`id`) FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`) 
+in /var/www/mpesa/protected/modules/rights/components/dataproviders/RAssignmentDataProvider.php (30)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (74)
+2014/02/23 13:52:47 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in /var/www/mpesa/protected/modules/rights/components/dataproviders/RAssignmentDataProvider.php (30)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (74)
+2014/02/23 13:52:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  LIMIT 50
+in /var/www/mpesa/protected/modules/rights/components/dataproviders/RAssignmentDataProvider.php (30)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+in /var/www/mpesa/protected/modules/rights/controllers/AssignmentController.php (74)
+2014/02/23 13:52:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid
+in /var/www/mpesa/protected/modules/rights/components/behaviors/RUserBehavior.php (91)
+in /var/www/mpesa/protected/modules/rights/components/behaviors/RUserBehavior.php (65)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+2014/02/23 13:52:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT name,t1.type,description,t1.bizrule,t1.data,weight
+					FROM AuthItem t1
+					LEFT JOIN Rights t2 ON name=itemname
+					ORDER BY t1.type DESC, weight ASC
+in /var/www/mpesa/protected/modules/rights/components/RDbAuthManager.php (169)
+in /var/www/mpesa/protected/modules/rights/components/RDbAuthManager.php (93)
+in /var/www/mpesa/protected/modules/rights/components/behaviors/RUserBehavior.php (92)
+2014/02/23 13:52:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid
+in /var/www/mpesa/protected/modules/rights/components/behaviors/RUserBehavior.php (91)
+in /var/www/mpesa/protected/modules/rights/components/behaviors/RUserBehavior.php (65)
+in /var/www/mpesa/protected/modules/rights/views/assignment/view.php (49)
+2014/02/23 13:52:48 [trace] [system.base.CModule] Loading "user" module
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:48 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/mpesa/protected/modules/user/models/User.php (33)
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (100)
+2014/02/23 13:52:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `users`
+in /var/www/mpesa/protected/modules/user/models/User.php (33)
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (100)
+2014/02/23 13:52:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in /var/www/mpesa/protected/modules/user/models/User.php (33)
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (100)
+2014/02/23 13:52:48 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (100)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (17)
+2014/02/23 13:52:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `profiles`
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (100)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (17)
+2014/02/23 13:52:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `profiles`
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (100)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (17)
+2014/02/23 13:52:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1)
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (100)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (17)
+2014/02/23 13:52:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `profiles_fields`
+in /var/www/mpesa/protected/modules/user/models/ProfileField.php (39)
+in /var/www/mpesa/protected/modules/user/views/profile/profile.php (27)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (21)
+2014/02/23 13:52:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `profiles_fields`
+in /var/www/mpesa/protected/modules/user/models/ProfileField.php (39)
+in /var/www/mpesa/protected/modules/user/views/profile/profile.php (27)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (21)
+2014/02/23 13:52:48 [trace] [system.db.ar.CActiveRecord] ProfileField.findAll()
+in /var/www/mpesa/protected/modules/user/views/profile/profile.php (27)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (21)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `profiles_fields` `t` WHERE visible>=1 ORDER BY position
+in /var/www/mpesa/protected/modules/user/views/profile/profile.php (27)
+in /var/www/mpesa/protected/modules/user/controllers/ProfileController.php (21)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:53 [trace] [system.base.CModule] Loading "user" module
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:53 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/mpesa/protected/modules/user/controllers/DefaultController.php (18)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `users`
+in /var/www/mpesa/protected/modules/user/controllers/DefaultController.php (18)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `users`
+in /var/www/mpesa/protected/modules/user/controllers/DefaultController.php (18)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:53 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/UserModule.php (194)
+in /var/www/mpesa/protected/modules/user/views/user/index.php (5)
+2014/02/23 13:52:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `profiles`
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/UserModule.php (194)
+in /var/www/mpesa/protected/modules/user/views/user/index.php (5)
+2014/02/23 13:52:53 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `profiles`
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/UserModule.php (194)
+in /var/www/mpesa/protected/modules/user/views/user/index.php (5)
+2014/02/23 13:52:53 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1)
+in /var/www/mpesa/protected/modules/user/UserModule.php (239)
+in /var/www/mpesa/protected/modules/user/UserModule.php (194)
+in /var/www/mpesa/protected/modules/user/views/user/index.php (5)
+2014/02/23 13:52:53 [trace] [system.db.ar.CActiveRecord] User.count()
+in /var/www/mpesa/protected/modules/user/views/user/index.php (27)
+in /var/www/mpesa/protected/modules/user/controllers/DefaultController.php (22)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:53 [trace] [system.db.ar.CActiveRecord] User.count() eagerly
+in /var/www/mpesa/protected/modules/user/views/user/index.php (27)
+in /var/www/mpesa/protected/modules/user/controllers/DefaultController.php (22)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:53 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(DISTINCT `user`.`id`) FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (status>-1)
+in /var/www/mpesa/protected/modules/user/views/user/index.php (27)
+in /var/www/mpesa/protected/modules/user/controllers/DefaultController.php (22)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:54 [trace] [system.db.ar.CActiveRecord] User.findAll()
+in /var/www/mpesa/protected/modules/user/views/user/index.php (27)
+in /var/www/mpesa/protected/modules/user/controllers/DefaultController.php (22)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2`, `profile`.`clientId` AS `t1_c3` FROM `users` `user`  LEFT OUTER JOIN `profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (status>-1) LIMIT 10
+in /var/www/mpesa/protected/modules/user/views/user/index.php (27)
+in /var/www/mpesa/protected/modules/user/controllers/DefaultController.php (22)
+in /var/www/mpesa/index.php (13)
+2014/02/23 13:52:58 [trace] [system.base.CModule] Loading "user" module
 in /var/www/mpesa/index.php (13)

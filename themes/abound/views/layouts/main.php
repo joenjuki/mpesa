@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-		<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
+		<!-- <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'> -->
 
 		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
@@ -13,8 +13,21 @@
 		<![endif]-->
 	<?php
 		$baseUrl = Yii::app()->theme->baseUrl; 
+		$appBaseUrl = Yii::app()->request->baseUrl;
+
+
+		
 		$cs = Yii::app()->getClientScript();
 		Yii::app()->clientScript->registerCoreScript('jquery');
+		$cs->registerScriptFile($baseUrl.'/js/bootstrap.min.js');
+		$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.sparkline.js');
+		$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.flot.min.js');
+		$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.flot.pie.min.js');
+		$cs->registerScriptFile($baseUrl.'/js/charts.js');
+		$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.knob.js');
+		$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.masonry.min.js');
+		$cs->registerScriptFile($baseUrl.'/js/styleswitcher.js');
+		$cs->registerScriptFile($appBaseUrl.'/libraries/jquery-ui-1.10.4-custom/jquery-ui-1.10.4.custom.min.js');
 	?>
 		<!-- Fav and Touch and touch icons -->
 		<link rel="shortcut icon" href="<?php echo $baseUrl;?>/img/icons/favicon.ico">
@@ -25,19 +38,12 @@
 		$cs->registerCssFile($baseUrl.'/css/bootstrap.min.css');
 		$cs->registerCssFile($baseUrl.'/css/bootstrap-responsive.min.css');
 		$cs->registerCssFile($baseUrl.'/css/abound.css');
+		$cs->registerCssFile($appBaseUrl . '/libraries/custom-theme/jquery-ui-1.10.4.custom.min.css');
 		//$cs->registerCssFile($baseUrl.'/css/style-blue.css');
 		?>
 			<!-- styles for style switcher -->
 				<link rel="stylesheet" type="text/css" href="<?php echo $baseUrl;?>/css/style-green.css" />
 		<?php
-		$cs->registerScriptFile($baseUrl.'/js/bootstrap.min.js');
-		$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.sparkline.js');
-		$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.flot.min.js');
-		$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.flot.pie.min.js');
-		$cs->registerScriptFile($baseUrl.'/js/charts.js');
-		$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.knob.js');
-		$cs->registerScriptFile($baseUrl.'/js/plugins/jquery.masonry.min.js');
-		$cs->registerScriptFile($baseUrl.'/js/styleswitcher.js');
 	?>
 	</head>
 

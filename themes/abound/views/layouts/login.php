@@ -13,8 +13,12 @@
 		<![endif]-->
 	<?php
 		$baseUrl = Yii::app()->theme->baseUrl; 
+		$appBaseUrl = Yii::app()->request->baseUrl;
+
 		$cs = Yii::app()->getClientScript();
 		Yii::app()->clientScript->registerCoreScript('jquery');
+		$cs->registerScriptFile($baseUrl.'/js/bootstrap.min.js');
+		$cs->registerScriptFile($appBaseUrl.'/libraries/jquery-ui-1.10.4-custom/jquery-ui-1.10.4.custom.min.js');
 	?>
 		<!-- Fav and Touch and touch icons -->
 		<link rel="shortcut icon" href="<?php echo $baseUrl;?>/img/icons/favicon.ico">
@@ -24,11 +28,9 @@
 		$cs->registerCssFile($baseUrl.'/css/bootstrap-responsive.min.css');
 		$cs->registerCssFile($baseUrl.'/css/abound.css');
 		//$cs->registerCssFile($baseUrl.'/css/style-blue.css');
-		?>
-			<!-- styles for style switcher -->
-				<link rel="stylesheet" type="text/css" href="<?php echo $baseUrl;?>/css/style-green.css" />
-		<?php
-		$cs->registerScriptFile($baseUrl.'/js/bootstrap.min.js');
+		$cs->registerCssFile($appBaseUrl . '/css/login.css');
+		$cs->registerCssFile($appBaseUrl . '/libraries/custom-theme/jquery-ui-1.10.4.custom.min.css');
+		
 		// $cs->registerScriptFile($baseUrl.'/js/plugins/jquery.sparkline.js');
 		// $cs->registerScriptFile($baseUrl.'/js/plugins/jquery.flot.min.js');
 		// $cs->registerScriptFile($baseUrl.'/js/plugins/jquery.flot.pie.min.js');
@@ -37,18 +39,18 @@
 		// $cs->registerScriptFile($baseUrl.'/js/plugins/jquery.masonry.min.js');
 		// $cs->registerScriptFile($baseUrl.'/js/styleswitcher.js');
 	?>
-	<style>
-		/*body {
-			background-color: #468847;
-		}*/
-	</style>
+	
 	</head>
 
 <body>
 <section class="main-body">
 		<div class="container-fluid-login">
+			<?php $this->beginWidget('zii.widgets.CPortlet', array('title' => 'Login', 
+			'id' => 'loginWidget',
+			'decorationCssClass' => 'ui-widget-header ui-corner-top')); ?>      
+			<?php echo $content; ?>
+			<?php $this->endWidget(); ?>
 						<!-- Include content pages -->
-						<?php echo $content; ?>
 		</div>
 </section>
 

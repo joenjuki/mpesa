@@ -1,0 +1,19 @@
+/*body {
+	background-image: url('../images/gradient.jpeg');
+	background-repeat: repeat-x;
+}*/
+#loginWidget {
+	width: 40%;
+	left: 30%;
+	right: 30%
+	top: 10%;
+	position: fixed;
+	border-top: none;
+
+}
+.portlet-title {
+	padding: 5px 0px 5px 10px;
+	font-weight: bold;
+	font-size: 1.2em;
+
+}

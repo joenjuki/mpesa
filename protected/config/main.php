@@ -7,9 +7,10 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'MPESA Business Number Management System',
-	'defaultController' => 'site/login',
+	'name'=>'Hyper Track',
+	'defaultController' => 'user/login',
 	'theme' => 'abound',
+	'layout' => 'column2',
 	'preload' => array(
 			'log',
 			'session'
@@ -21,9 +22,22 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.controllers.*',
+		'application.modules.user.models.*',
+		'application.modules.user.components.*',
+		'application.modules.rights.*',
+		'application.modules.rights.components.*'
 	),
 
 	'modules'=>array(
+		'user'=>array(
+			'tableUsers' => 'users',
+			'tableProfiles' => 'profiles',
+			'tableProfileFields' => 'profiles_fields'
+		),
+		'rights'=>array(
+			'install'=> false
+		)
 		// uncomment the following to enable the Gii tool
 		/*
 		'gii'=>array(
@@ -38,8 +52,15 @@ return array(
 	// application components
 	'components'=>array(
 		'user'=>array(
+			'class'=>'RWebUser',
+			'loginUrl'=>array('/user/login'),
 			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+			'allowAutoLogin'=>true
+		),
+		'authManager'=>array(
+			'class'=>'RDbAuthManager',
+			'connectionID'=>'db',
+			'defaultRoles'=>array('Authenticated', 'Guest'),
 		),
 		// uncomment the following to enable URLs in path-format
 		
@@ -59,7 +80,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=wwwkemb_mpesa',
+			'connectionString' => 'mysql:host=localhost;dbname=cartrackmgt',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'root',

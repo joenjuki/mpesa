@@ -19,6 +19,13 @@
 					'items'=>array(
 						array('label'=>'Dashboard', 'url'=>array('/site/index')),
 						array('label'=>'Graphs & Charts', 'url'=>array('/site/page', 'view'=>'graphs')),
+						array('label'=>'Rights', 'url'=>array('/rights'), 'visible'=>!Yii::app()->user->isGuest),
+						// array('url'=>Yii::app()->getModule('user')->loginUrl, 'label'=>Yii::app()->getModule('user')->t("Login"),
+						// 'visible'=>Yii::app()->user->isGuest),
+						array('url'=>Yii::app()->getModule('user')->registrationUrl, 'label'=>Yii::app()->getModule('user')->t("Register"),
+						'visible'=>Yii::app()->user->isGuest),
+						array('url'=>Yii::app()->getModule('user')->profileUrl, 'label'=>Yii::app()->getModule('user')->t("Profile"),
+						'visible'=>!Yii::app()->user->isGuest),
 						// array('label'=>'Forms', 'url'=>array('/site/page', 'view'=>'forms')),
 						// array('label'=>'Tables', 'url'=>array('/site/page', 'view'=>'tables')),
 						// array('label'=>'Interface', 'url'=>array('/site/page', 'view'=>'interface')),
@@ -32,7 +39,7 @@
 						// 	array('label'=>'Separated link', 'url'=>'#'),
 						// 	array('label'=>'One more separated link', 'url'=>'#'),
 						// )),
-						array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+						// array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 						array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 					),
 				)); ?>
@@ -54,11 +61,11 @@
 				<a href="javascript:chooseStyle('style6', 60)"><span class="style" style="background-color:#a00a69;"></span></a>
 				<a href="javascript:chooseStyle('style7', 60)"><span class="style" style="background-color:#a30c22;"></span></a>
 			</div> -->
-		   <form class="navbar-search pull-right" action="">
+		   <!-- <form class="navbar-search pull-right" action="">
 			 
 		   <input type="text" class="search-query span2" placeholder="Search">
 		   
-		   </form>
+		   </form> -->
 		</div><!-- container -->
 	</div><!-- navbar-inner -->
 </div><!-- subnav -->
