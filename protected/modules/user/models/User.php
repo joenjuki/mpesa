@@ -59,11 +59,11 @@ class User extends CActiveRecord
 			array('superuser', 'in', 'range'=>array(0,1)),
             array('create_at', 'default', 'value' => date('Y-m-d H:i:s'), 'setOnEmpty' => true, 'on' => 'insert'),
             array('lastvisit_at', 'default', 'value' => '0000-00-00 00:00:00', 'setOnEmpty' => true, 'on' => 'insert'),
-			array('username, email, superuser, status', 'required'),
+			array('username, email, superuser, status, companyId', 'required'),
 			array('superuser, status', 'numerical', 'integerOnly'=>true),
 			array('id, username, password, email, activkey, create_at, lastvisit_at, superuser, status', 'safe', 'on'=>'search'),
 		):((Yii::app()->user->id==$this->id)?array(
-			array('username, email', 'required'),
+			array('username, email, companyId', 'required'),
 			array('username', 'length', 'max'=>20, 'min' => 3,'message' => UserModule::t("Incorrect username (length between 3 and 20 characters).")),
 			array('email', 'email'),
 			array('username', 'unique', 'message' => UserModule::t("This user's name already exists.")),
@@ -90,18 +90,19 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => UserModule::t("Id"),
-			'username'=>UserModule::t("username"),
-			'password'=>UserModule::t("password"),
+			'username'=>UserModule::t("Username"),
+			'password'=>UserModule::t("Password"),
 			'verifyPassword'=>UserModule::t("Retype Password"),
 			'email'=>UserModule::t("E-mail"),
 			'verifyCode'=>UserModule::t("Verification Code"),
-			'activkey' => UserModule::t("activation key"),
+			'activkey' => UserModule::t("Activation key"),
 			'createtime' => UserModule::t("Registration date"),
 			'create_at' => UserModule::t("Registration date"),
 			
 			'lastvisit_at' => UserModule::t("Last visit"),
 			'superuser' => UserModule::t("Superuser"),
 			'status' => UserModule::t("Status"),
+			'companyId' => UserModule::t("Company"),
 		);
 	}
 	

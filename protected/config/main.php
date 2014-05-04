@@ -37,16 +37,19 @@ return array(
 		),
 		'rights'=>array(
 			'install'=> false
-		)
+		),
 		// uncomment the following to enable the Gii tool
-		/*
+		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'1234',
+			'generatorPaths'=>array(
+				'bootstrap.gii'
+			),
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('127.0.0.1','::1'),
+			// 'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		*/
+		
 	),
 
 	// application components
@@ -55,7 +58,9 @@ return array(
 			'class'=>'RWebUser',
 			'loginUrl'=>array('/user/login'),
 			// enable cookie-based authentication
-			'allowAutoLogin'=>true
+			'allowAutoLogin'=>true,
+			'loginRequiredAjaxResponse' => 'YII_LOGIN_REQUIRED',
+			// 'returnLogoutUrl' => array('/user/login')
 		),
 		'authManager'=>array(
 			'class'=>'RDbAuthManager',
@@ -72,6 +77,16 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 			// 'showScriptName' => false
+		),
+		'session' => array(
+			'sessionName' => 'hypertracksess',
+			'class' => 'CHttpSession',
+			//'class' => 'CDbHttpSession',
+			'autoStart' => true,
+			
+			'timeout' => 300,
+			//'timeout' => 300,
+
 		),
 		
 		// 'db'=>array(
@@ -98,7 +113,7 @@ return array(
                    'class'=>'CFileLogRoute',
                    'levels'=>'trace, info, error, warning',
                    //'categories'=>'system.*',
-                   'logFile' => 'MBNMS.log',
+                   'logFile' => 'hypertrack.log',
                    'except' => "system.CModule.*, system.caching.*, system.web.*" 
 
                ),

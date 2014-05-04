@@ -3,6 +3,42 @@
 class SiteController extends Controller
 {
 	/**
+	 * @return array action filters
+	 */
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+			'postOnly + delete', // we only allow deletion via POST request
+		);
+	}
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
+	{
+		return array(
+			array('allow',  // allow all users to perform 'index' action
+				'actions'=>array('index'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
+	/**
 	 * Declares class-based actions.
 	 */
 	public function actions()
@@ -30,8 +66,89 @@ class SiteController extends Controller
 		// Yii::app()->theme = 'abound';
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+		// $sql = "SELECT gpsDevice.phoneNumber, cars.regNo FROM `gpsDevice`" . 
+		// " INNER JOIN `cars` ON cars.deviceId = gpsDevice.deviceId";
+		
+		$rsRegNoPlusDevice = Yii::app()->db->createCommand()
+		->select('gpsDevice.phoneNumber, cars.regNo')
+		->from('gpsDevice')
+		->join('cars', 'cars.deviceId = gpsDevice.deviceId')
+		->queryAll();
+		// $rsRegNoPlusDevice = $query->createCommand();
+		// $rsRegNoPlusDevice = $command->queryAll();	
+		// $rsRegNoPlusDevice = GpsDevice::model()->findAllBySql($sql);
+		$carRegNoArray = array('' => '');
+		// print_r($rsRegNoPlusDevice);
+		foreach ($rsRegNoPlusDevice as $row) {
+			$carRegNoArray[$row['phoneNumber'] . '|' . $row['regNo']] = $row['regNo'];
 
-		$this->render('index');
+		}
+
+		$this->render('index', array(
+			'carsDropDownArray' => $carRegNoArray
+			));
+	}
+
+	public function actionGetCarCoords() {
+		if (!empty($_POST['phoneNumber'])) {
+			$queryArray = explode('|', $_POST['phoneNumber']);
+			$phoneNumber = $queryArray[0];
+			$carRegNo = $queryArray[1];
+			$criteria=new CDbCriteria;
+			$criteria->select='coordinates, eventTime';  // only select the 'title' column
+			$criteria->condition='phoneNumber=:phoneNo';
+			$criteria->order='eventTime ASC';
+			$criteria->params=array(':phoneNo' => $phoneNumber);
+			$rsDeviceCoords = TrackingInfo::model()->findAll($criteria);
+			// print_r($deviceCoords);
+			$coordsArray = array();
+			$coordsArray['carRegNo'] = $carRegNo;
+			$coordSearch = array();
+			$coordReplace = array();
+			$coordsArray['marker'] = array('type' => 'FeatureCollection', 
+				'features' => array()
+				);
+			$bounds = "[";
+			$lineString = "[";
+			$coordTotal = count($rsDeviceCoords);
+			$coordCount = 1;
+			foreach ($rsDeviceCoords as $coordKey => $coordVal) {
+				// print_r($originalCoords); die();
+				$coordsTemp = explode(',', $coordVal['coordinates']);
+				$originalCoords = round($coordsTemp[0], 4) . ',' . round($coordsTemp[1], 4);
+				$coordVal['coordinates'] = round($coordsTemp[1], 4) . ',' . round($coordsTemp[0], 4);
+				$coordsArray['marker']['features'][] = array(
+					'type' => 'Feature',
+					"properties" => array("popupContent" => "<b> <u>$carRegNo</u> <br/>The car was here at: " . $coordVal['eventTime'] . "</b>"),
+					"geometry" => array( 
+						"type" => "Point", 
+						"coordinates" => array($coordVal['coordinates'])
+						));
+				$coordSearch[$coordKey] = '"' . $coordVal['coordinates'] . '"';
+				$coordReplace[$coordKey] = str_replace(array("+0", "-0"), array("", "-"), $coordVal['coordinates']);
+				$bounds .= "[$originalCoords]"; // $coordReplace[$coordKey]; //$coordVal['coordinates'];
+				$lineString .= '[' . $coordVal['coordinates'] . ']';
+				$bounds .= ($coordCount < $coordTotal) ? ',' : '';
+				$lineString .= ($coordCount < $coordTotal) ? ',' : '';
+				$coordCount++;
+				// $coordsArray['marker'][$coordKey]['popup'] = $coordVal['eventTime'];
+			}
+			$bounds .= "]";
+			$lineString .= "]";
+			// var_dump($coordsArray); die();
+			// $coordsArray['bounds'] = json_encode($coordReplace, JSON_NUMERIC_CHECK);
+			// $coordsArray['bounds'] = str_replace(array('"[',']"'), array('[[',']]'), $coordsArray['bounds']);
+			// $coordsArray['bounds']= str_replace('"', '', str_replace('"', '', $coordsArray['bounds']));
+			$coordsJson = json_encode($coordsArray, JSON_NUMERIC_CHECK);
+			$coordsJson = str_replace($coordSearch, $coordReplace, $coordsJson);
+			$trimmedCoordsJson = rtrim($coordsJson, "}");
+
+			echo $trimmedCoordsJson . '}, "bounds": ' . $bounds . ', "lines": ' . $lineString . '}';
+			return;
+		}
+		echo json_encode(array("error" => "There was a problem retrieving GPS coordinates"));
+		return;
+
 	}
 
 	/**

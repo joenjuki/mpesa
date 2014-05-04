@@ -31,14 +31,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'superuser'); ?>
-		<?php echo $form->dropDownList($model,'superuser',User::itemAlias('AdminStatus')); ?>
+		<?php echo $form->dropDownList($model,'superuser',User::itemAlias('AdminStatus'), array('class' => 'dropDown')) ?>
 		<?php echo $form->error($model,'superuser'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->dropDownList($model,'status',User::itemAlias('UserStatus')); ?>
+		<?php echo $form->dropDownList($model,'status', User::itemAlias('UserStatus'), array('class' => 'dropDown')); ?>
 		<?php echo $form->error($model,'status'); ?>
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'companyId'); ?>
+		<?php echo $form->dropDownList($model,'companyId',Companies::companiesDropDown(), array('class' => 'dropDown')) ?>
+		<?php echo $form->error($model,'companyId'); ?>
 	</div>
 <?php 
 		$profileFields=$profile->getFields();

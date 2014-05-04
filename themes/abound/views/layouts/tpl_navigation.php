@@ -11,7 +11,14 @@
 		  <a class="brand" href="#"><?php echo Yii::app()->name; ?></a>
 		  
 		  <div class="nav-collapse">
-			<?php $this->widget('zii.widgets.CMenu',array(
+			<?php 
+			// var_dump(Yii::app()->user->getIsSuperuser()); die();
+			$superUser = false;
+			if(Yii::app()->user->getIsSuperuser()) {
+				$superUser = true;
+			}
+			
+			$this->widget('zii.widgets.CMenu',array(
 					'htmlOptions'=>array('class'=>'pull-right nav'),
 					'submenuHtmlOptions'=>array('class'=>'dropdown-menu'),
 					'itemCssClass'=>'item-test',
@@ -19,13 +26,14 @@
 					'items'=>array(
 						array('label'=>'Dashboard', 'url'=>array('/site/index')),
 						array('label'=>'Graphs & Charts', 'url'=>array('/site/page', 'view'=>'graphs')),
-						array('label'=>'Rights', 'url'=>array('/rights'), 'visible'=>!Yii::app()->user->isGuest),
+						// array('label'=>'Rights', 'url'=>array('/rights'), 'visible'=>!Yii::app()->user->isGuest),
+						array('label'=>'Rights', 'url'=>array('/rights'), 'visible' => $superUser),
 						// array('url'=>Yii::app()->getModule('user')->loginUrl, 'label'=>Yii::app()->getModule('user')->t("Login"),
 						// 'visible'=>Yii::app()->user->isGuest),
 						array('url'=>Yii::app()->getModule('user')->registrationUrl, 'label'=>Yii::app()->getModule('user')->t("Register"),
-						'visible'=>Yii::app()->user->isGuest),
+						'visible'=> $superUser),
 						array('url'=>Yii::app()->getModule('user')->profileUrl, 'label'=>Yii::app()->getModule('user')->t("Profile"),
-						'visible'=>!Yii::app()->user->isGuest),
+						'visible'=>$superUser),
 						// array('label'=>'Forms', 'url'=>array('/site/page', 'view'=>'forms')),
 						// array('label'=>'Tables', 'url'=>array('/site/page', 'view'=>'tables')),
 						// array('label'=>'Interface', 'url'=>array('/site/page', 'view'=>'interface')),
@@ -40,7 +48,7 @@
 						// 	array('label'=>'One more separated link', 'url'=>'#'),
 						// )),
 						// array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+						array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest),
 					),
 				)); ?>
 		</div>
